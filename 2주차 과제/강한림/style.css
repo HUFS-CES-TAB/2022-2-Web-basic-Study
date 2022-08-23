@@ -216,7 +216,7 @@ body > .info {
 }
 
 .upNext .item .info {
-    flex: 1 1 60%;
+    flex: 1 1 30%;
 }
 
 .upNext .item .moreBtn {
@@ -234,6 +234,10 @@ body > .info {
     color: var(--grey-dark-color);
 }
 
+.upNext .item .info .title{
+	font-size: var(--font-small);
+}
+
 .infoAndUpNext {
     display: flex;
     flex-direction: column;
@@ -244,5 +248,6 @@ body > .info {
     .infoAndUpNext {
         flex-direction: row;
         margin:var(--padding) 0;
+        
     }
 }
