@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fruit shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>어서오세요!</h1>
+    <div class="fruit1_and_fruit2">
+        <ul>
+        <div class="fruit_name_and_pic1"><li class="fruit_1_font">사과</li>
+        <li><img id="pic1" src="img/apple.jpg" ></li></div>
+        <li> 한 봉지(3개) 1500원</li>
+        <div class="number_grid"><li>재고</li>
+        <li id="apple">10</li></div>
+        <li><br></li>
+        <li><button id="increase1" class="button1">구매하기</button></li>
+    </ul>
+
+    <ul>
+        <div class="fruit_name_and_pic2"><li class="fruit_2_font">바나나</li>
+            <li><img id="pic2" src="img/banana.JPG" ></li></div>
+        <li> 한 송이 3000원</li>
+        <div class="number_grid"><li>재고</li>
+        <li id="banana">5</li></div>
+        <li><br></li>
+        <li><button id="increase2" class="button2">구매하기</button></li>
+    </ul>
+    </div>
+    <div class="fruit3_and_fruit4">
+    <ul>
+        <div class="fruit_name_and_pic3"><li class="fruit_3_font">블루베리</li>
+        <li><img id="pic3" src="img/blueberry.JPG" ></li></div>
+        <li> 한 통(500g) 5000원</li>
+        <div class="number_grid"><li>재고</li>
+        <li id="blueberry">4</li></div>
+        <li><br></li>
+        <li><button id="increase3" class="button3">구매하기</button></li>
+    </ul>
+
+    <ul>
+        <div class="fruit_name_and_pic4"><li class="fruit_4_font">레몬</li>
+        <li><img id="pic4" src="img/lemon.JPG" ></li></div>
+        <li> 한 봉지(5개) 2500원</li>
+        <div class="number_grid"><li>재고</li>
+        <li id="lemon">2</li></div>
+        <li><br></li>
+        <li><button id="increase4" class="button4">구매하기</button></li>
+    </ul>
+    </div>
+
+    <!--구매 목록 정리-->
+
+    <ul>
+        <li>구매한 목록 입니다.</li>
+        <table>
+            <tr>
+                <td>사과</td>
+                <td id="apple_plus">0</td>
+            </tr>
+            <tr>
+                <td>바나나</td>
+                <td id="banana_plus">0</td>
+            </tr>
+            <tr>
+                <td>블루베리</td>
+                <td id="blueberry_plus">0</td>
+            </tr>
+            <tr>
+                <td>레몬</td>
+                <td id="lemon_plus">0</td>
+            </tr>
+        </table>
+    </ul>
+
+    <!-- 합계를 구하는 부분 -->
+    <div id ='total'></div>
+    <div class="total_button"><input  type="button" value="합계" onclick="get_total()"></div>
+
+    <!-- JS 부분-->
+    <script>
+        var apple = 10;
+        var apple_plus = 0;
+        var apple_price = 1500;
+
+        var banana = 5;
+        var banana_plus = 0;
+        var banana_price = 3000;
+
+        var blueberry = 4;
+        var blueberry_plus = 0;
+        var blueberry_price = 5000;
+
+        var lemon = 2;
+        var lemon_plus = 0;
+        var lemon_price = 2500;
+        
+        var valueapple = document.getElementById('apple');
+        document.getElementById('increase1').addEventListener('click', function(){
+            if(0<apple<=10) {
+                apple = apple-1;
+                if(apple<0){
+                    alert('더 이상 구매할 수 없습니다!');
+                    apple = 0;
+                }
+            }
+            valueapple.innerText = apple;
+        });
+        var valueapple_plus = document.getElementById('apple_plus');
+        document.getElementById('increase1').addEventListener('click', function(){
+            if(0<apple<=10) {
+                apple_plus = apple_plus+1;
+                if(apple_plus>10){
+                    apple_plus = 10;
+                }
+            }
+            valueapple_plus.innerText = apple_plus;
+        });
+       
+        var valuebanana = document.getElementById('banana');
+        document.getElementById('increase2').addEventListener('click', function(){
+            if(0<banana<=5) {
+                banana = banana-1;
+                if(banana<0){
+                    alert('더 이상 구매할 수 없습니다!');
+                    banana = 0;
+                }
+            }
+            valuebanana.innerText = banana;
+        });
+        var valuebanana_plus = document.getElementById('banana_plus');
+        document.getElementById('increase2').addEventListener('click', function(){
+            if(0<banana<=10) {
+                banana_plus = banana_plus+1;
+                if(banana_plus>5){
+                    banana_plus = 5;
+                }
+            }
+            valuebanana_plus.innerText = banana_plus;
+        });
+
+        var valueblueberry = document.getElementById('blueberry');
+        document.getElementById('increase3').addEventListener('click', function(){
+            if(0<blueberry<=4) {
+                blueberry = blueberry-1;
+                if(blueberry<0){
+                    alert('더 이상 구매할 수 없습니다!');
+                    blueberry = 0;
+                }
+            }
+            valueblueberry.innerText = blueberry;
+        });
+        var valueblueberry_plus = document.getElementById('blueberry_plus');
+        document.getElementById('increase3').addEventListener('click', function(){
+            if(0<blueberry<=4) {
+                blueberry_plus = blueberry_plus+1;
+                if(blueberry_plus>4){
+                    blueberry_plus = 4;
+                }
+            }
+            valueblueberry_plus.innerText = blueberry_plus;
+        });
+
+        var valuelemon = document.getElementById('lemon');
+        document.getElementById('increase4').addEventListener('click', function(){
+            if(0<lemon<=2) {
+                lemon = lemon-1;
+                if(lemon<0){
+                    alert('더 이상 구매할 수 없습니다!');
+                    lemon = 0;
+                }
+            }
+            valuelemon.innerText = lemon;
+        });
+        var valuelemon_plus = document.getElementById('lemon_plus');
+        document.getElementById('increase4').addEventListener('click', function(){
+            if(0<lemon<=2) {
+                lemon_plus = lemon_plus+1;
+                if(lemon_plus>2){
+                    lemon_plus = 2;
+                }
+            }
+            valuelemon_plus.innerText = lemon_plus;
+        });
+
+
+
+
+
+        /*JS 합계 구하기*/
+        function get_total() {
+            var total = document.getElementById('total');
+            var total_price = (apple_price*apple_plus)+(banana_price*banana_plus)+(blueberry_plus*blueberry_price)+(lemon_plus*lemon_price);
+            total.innerHTML="총 "+total_price+"원 입니다.";
+
+        }
+        
+    </script>
+    
+
+
+</body>
+</html>

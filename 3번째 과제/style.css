@@ -1,0 +1,184 @@
+:root {
+
+    --basic-margin : 0px;
+    --font-size-big : 30px;
+    --font-size-medium :20px;
+    --font-size-small : 15px;
+   
+    --basic-padding : 15px;
+    --button-margin-left : 15px;
+    --padding-left : 20px;
+
+    --font-color-skyblue : #73B9C9;
+    --font-color-red : #E04342;
+    --font-color-li_yellow : #fff176;
+    --font-color-da_yello : #ffc107;
+    --font-color-da_blue : #01579b;
+
+
+    --button-color-red : #fa5a5a;
+    --button-color-da-bule: #6466f0;
+    --button-color-da-yellow: #F0D264;
+    --button-color-li-yellow: #ffe278;
+    --button-radius : 10px;
+    
+    --button-shadow-red: 0px 2px 0px #E04342;
+    --button-shadow-da-blue: 0px 2px 0px #01579b;
+    --button-shadow-li-yellow: 0px 2px 0px #fff176;
+    --button-shadow-da-yellow: 0px 2px 0px #ffc107;
+
+    --button-active-shadow-red: 0 0 #ff4c4b;
+    --button-active-shadow-da-blue: 0 0 #74a3b0;
+    --button-active-shadow-li-yellow: 0 0 #f5e665;
+    --button-active-shadow-da-yellow: 0 0 #D6BB59;
+
+    --button-active-background-red : #b43434;
+    --button-active-background-da-blue : #0d426a;
+    --button-active-background-li-yellow : #c4b84e;
+    --button-active-background-da-yellow : #a58f40;
+
+}
+
+h1 {
+    padding-left: var(--basic-padding);
+    margin:var(--basic-margin);
+    font-size: var(--font-size-big);
+    color: var(--font-color-skyblue);
+}
+
+ul {
+    list-style: none;
+}
+
+.fruit1_and_fruit2{
+    display: grid;
+    grid-template-columns: 300px 300px;
+}
+
+.fruit3_and_fruit4{
+    display: grid;
+    grid-template-columns: 300px 300px;
+}
+
+.number_grid {
+    display: grid;
+    grid-template-columns: 70px 100px;
+}
+
+.fruit_name_and_pic1 {
+    display: grid;
+    grid-template-columns: 70px 100px;
+}
+
+.fruit_name_and_pic2 {
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+
+.fruit_name_and_pic3 {
+    display: grid;
+    grid-template-columns: 120px 100px;
+}
+
+.fruit_name_and_pic4 {
+    display: grid;
+    grid-template-columns: 70px 100px;
+}
+
+#pic1 {
+    width: 60px;
+    height: 35px;
+}
+
+#pic2 {
+    width: 50px;
+    height: 30px;
+}
+
+#pic3 {
+    width: 50px;
+    height: 50px;
+}
+
+#pic4 {
+    width: 50px;
+    height: 40px;
+}
+
+.fruit_1_font {
+    padding-left: var(--padding-left);
+    margin:var(--basic-margin);
+    font-size: var(--font-size-medium);
+    color: var(--font-color-red);
+}
+
+.fruit_2_font {
+    padding-left: var(--padding-left);
+    margin:var(--basic-margin);
+    font-size: var(--font-size-medium);
+    color: var(--font-color-da_yello);
+}
+
+.fruit_3_font {
+    padding-left: var(--padding-left);
+    margin:var(--basic-margin);
+    font-size: var(--font-size-medium);
+    color: var(--font-color-da_blue);
+}
+
+.fruit_4_font {
+    padding-left: var(--padding-left);
+    margin:var(--basic-margin);
+    font-size: var(--font-size-medium);
+    color: var(--font-color-li_yellow);
+}
+
+.button1 {
+    margin-left: var(--button-margin-left);
+    background-color: var(--button-color-red);
+    border-radius: var(--button-radius);
+    box-shadow: var(--button-shadow-red);
+}
+.button1:active {
+    box-shadow: var(--button-active-shadow-red);
+    background-color: var(--button-active-background-red);
+}
+
+.button2 {
+    margin-left: var(--button-margin-left);
+    background-color: var(--button-color-da-yellow);
+    border-radius: var(--button-radius);
+    box-shadow: var(--button-shadow-da-yellow);
+}
+.button2:active {
+    box-shadow: var(--button-active-shadow-da-yellow);
+    background-color: var(--button-active-background-da-yellow);
+}
+
+.button3 {
+    margin-left: var(--button-margin-left);
+    background-color: var(--button-color-da-bule);
+    border-radius: var(--button-radius);
+    box-shadow: var(--button-shadow-da-blue);
+}
+.button3:active {
+    box-shadow: var(--button-active-shadow-da-blue);
+    background-color: var(--button-active-background-da-blue);
+}
+
+.button4 {
+    margin-left: var(--button-margin-left);
+    background-color: var(--button-color-li-yellow);
+    border-radius: var(--button-radius);
+    box-shadow: var(--button-shadow-li-yellow);
+}
+.button4:active {
+    box-shadow: var(--button-active-shadow-li-yellow);
+    background-color: var(--button-active-background-li-yellow);
+}
+.total_button{
+    margin-left:35px;
+}
+#total {
+    margin-left: 35px;
+}
