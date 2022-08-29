@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<head>
+    <title>TabFruit | Store</title>
+    <meta charset = "utf-8">
+    <link rel="stylesheet" href="style2.css" />
+    <script src="https://kit.fontawesome.com/f4a5dd5ce5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1><i class="fa-solid fa-lemon"></i>TabFruit<i class="fa-solid fa-lemon"></i></h1>
+    </header>
+    
+    <section class="container content-section">
+        <div class = "shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">포도 1kg</span>
+                <img id="shop-item-image" src="grape.png"/>
+                <div class = "shop-item-details">
+                    <span class="shop-item-price"> 17800￦ </span>
+                    <span class="shop-item-stock">재고</span>
+                    <span id="grape">10</span>
+                    <button id="purchase1" class="btn">Purchase</button>
+                </div>
+            </div>
+        
+            <div class="shop-item">
+                <span class="shop-item-title">딸기 750g</span>
+                <img id="shop-item-image" src="strawberry.png"/>
+                <div class = "shop-item-details">
+                    <span class="shop-item-price"> 17000￦ </span>
+                    <span class="shop-item-stock">재고</span>
+                    <span id="strawberry">8</span>
+                    <button id="purchase2" class="btn">Purchase</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container content-section">
+        <h2 class="section-header">CART</h2>
+
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">제품</span>
+            <span class="cart-quantity cart-header cart-column">수량</span>
+        </div>
+
+        <div class = "cart-items">
+            <span class="cart-item cart-column">
+                <img class="cart-item-image" src="grape.png" width="100" height="100">
+                <span class="cart-item-title">포도 1kg</span>
+                
+            </span>
+            <span class="cart-quantity cart-column">
+                    <span id="grape_count"  class = "cart-item-quantity" >0</span>
+            </span>
+        </div>
+
+        <div class="cart-items">
+            <span class="cart-item cart-column">
+                <img class="cart-item-image" src="strawberry.png" width="100" height="100">
+                <span class="cart-item-title">딸기 750g</span>
+            </span>
+            <span class="cart-quantity cart-column">
+                    <span id = "strawberry_count" class = "cart-item-quantity">0</span>
+            </span>
+            
+            
+        </div>
+
+         
+        <button id="price_btn" class="btn">총합</button>
+        <span id ="total"></span>
+
+    </section>
+
+    <script>
+        var grape = 10;
+        var grape_count = 0;
+        var grape_price = 17800;
+
+        var strawberry = 10;
+        var strawberry_count = 0;
+        var strawberry_price = 17000;
+
+        var stockgrape = document.getElementById("grape");
+        document.getElementById("purchase1").addEventListener("click", function(){
+            if(0<grape<=10) {
+                grape = grape-1;
+                if(grape<0){
+                    alert("더 이상 구매할 수 없습니다!");
+                    grape = 0;
+                }
+            }
+            stockgrape.innerText = grape;
+        });
+        var stockgrape_count = document.getElementById("grape_count");
+        document.getElementById("purchase1").addEventListener("click", function(){
+            if(0<grape<=10) {
+                grape_count = grape_count+1;
+                if(grape_count>10){
+                    grape_count = 10;
+                }
+            }
+            stockgrape_count.innerText = grape_count;
+        });
+       
+        var stockstrawberry = document.getElementById("strawberry");
+        document.getElementById("purchase2").addEventListener("click", function(){
+            if(0<strawberry<=5) {
+                strawberry = strawberry-1;
+                if(strawberry<0){
+                    alert("재고가 없습니다");
+                    strawberry = 0;
+                }
+            }
+            stockstrawberry.innerText = strawberry;
+        });
+        var stockstrawberry_count = document.getElementById("strawberry_count");
+        document.getElementById("purchase2").addEventListener("click", function(){
+            if(0<strawberry<=10) {
+                strawberry_count = strawberry_count+1;
+                if(strawberry_count>5){
+                    strawberry_count = 5;
+                }
+            }
+            stockstrawberry_count.innerText = strawberry_count;
+        });
+
+        document.getElementById("price_btn").addEventListener("click",function(){
+            var total = document.getElementById("total");
+            var total_price = (grape_price*grape_count)+(strawberry_price*strawberry_count);
+            total.innerHTML=total_price+"￦";
+        });
+        
+    </script>
+    
+</body>
+</html>
